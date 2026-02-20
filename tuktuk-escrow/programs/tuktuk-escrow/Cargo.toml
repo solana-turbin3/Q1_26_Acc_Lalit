@@ -1,0 +1,23 @@
+[package]
+name = "tuktuk-escrow"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "tuktuk_escrow"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = "0.31.1"
+tuktuk-program = { git = "https://github.com/helium/tuktuk.git", rev = "112afe5e80aff8199c3b779203b76b35d97c42d1" }
+getrandom = { version = "0.2.15", features = ["custom"] }
